@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" />
+	<script src="js/bootstrap.min.js"></script>
+<title>Lista de Contas cadastradas</title>
+</head>
+<body>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2>Contas Cadastradas</h2>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-sm table-striped table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>Nome</th>
+		            		<th>Valor Original</th>
+		            		<th>Valor Corrigido</th>
+		            		<th>Dias de Atraso</th>
+		            		<th>Data de pagamento</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="conta : ${contas}">
+			            	<td th:text="${conta.nome}"></td>
+			            	<td th:text="${conta.valorOriginal}"></td>
+			            	<td th:text="${conta.valorCorrigido}"></td>
+			            	<td th:text="${conta.diasAtraso}"></td>
+			            	<td th:text="${conta.dataPagamento}"></td>
+		            	</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-sm btn-success" href="/" >Cadastrar Contas</a>
+		</div>
+	</div>
+	
+</body>
+</html>
